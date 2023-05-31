@@ -9,6 +9,18 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+//importroutes
+const authRoutes = require('./routes/auth')
+const studyRoutes = require('./routes/study')
+const workRoutes = require('./routes/work')
+const noteRoutes = require('./routes/note')
+
+app.use('/auth',authRoutes)
+app.use('/study',studyRoutes)
+app.use('/work',workRoutes)
+app.use('/note',noteRoutes)
+
+
 app.use(bodyParser.json());
 app.use(cors())
 
