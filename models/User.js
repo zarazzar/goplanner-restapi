@@ -25,7 +25,7 @@ const userSchema = mongoose.Schema({
     versionKey: false
 })
 
-userSchema.method('toJson',function(){
+userSchema.method('toJSON',function(){
     const{_id, ...object} = this.toObject()
     object.id = _id
     object.created_date = moment(object.created_date).format('DD-MM-YYYYY HH:mm:ss')
